@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'counter_event.dart';
+part of 'counter_bloc_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$CounterEvent {
+mixin _$CounterBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() increment,
@@ -57,16 +57,16 @@ mixin _$CounterEvent {
 }
 
 /// @nodoc
-abstract class $CounterEventCopyWith<$Res> {
-  factory $CounterEventCopyWith(
-          CounterEvent value, $Res Function(CounterEvent) then) =
-      _$CounterEventCopyWithImpl<$Res, CounterEvent>;
+abstract class $CounterBlocEventCopyWith<$Res> {
+  factory $CounterBlocEventCopyWith(
+          CounterBlocEvent value, $Res Function(CounterBlocEvent) then) =
+      _$CounterBlocEventCopyWithImpl<$Res, CounterBlocEvent>;
 }
 
 /// @nodoc
-class _$CounterEventCopyWithImpl<$Res, $Val extends CounterEvent>
-    implements $CounterEventCopyWith<$Res> {
-  _$CounterEventCopyWithImpl(this._value, this._then);
+class _$CounterBlocEventCopyWithImpl<$Res, $Val extends CounterBlocEvent>
+    implements $CounterBlocEventCopyWith<$Res> {
+  _$CounterBlocEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -83,7 +83,7 @@ abstract class _$$IncrementCopyWith<$Res> {
 
 /// @nodoc
 class __$$IncrementCopyWithImpl<$Res>
-    extends _$CounterEventCopyWithImpl<$Res, _$Increment>
+    extends _$CounterBlocEventCopyWithImpl<$Res, _$Increment>
     implements _$$IncrementCopyWith<$Res> {
   __$$IncrementCopyWithImpl(
       _$Increment _value, $Res Function(_$Increment) _then)
@@ -97,7 +97,7 @@ class _$Increment implements Increment {
 
   @override
   String toString() {
-    return 'CounterEvent.increment()';
+    return 'CounterBlocEvent.increment()';
   }
 
   @override
@@ -172,7 +172,7 @@ class _$Increment implements Increment {
   }
 }
 
-abstract class Increment implements CounterEvent {
+abstract class Increment implements CounterBlocEvent {
   const factory Increment() = _$Increment;
 }
 
@@ -185,7 +185,7 @@ abstract class _$$DecrementCopyWith<$Res> {
 
 /// @nodoc
 class __$$DecrementCopyWithImpl<$Res>
-    extends _$CounterEventCopyWithImpl<$Res, _$Decrement>
+    extends _$CounterBlocEventCopyWithImpl<$Res, _$Decrement>
     implements _$$DecrementCopyWith<$Res> {
   __$$DecrementCopyWithImpl(
       _$Decrement _value, $Res Function(_$Decrement) _then)
@@ -199,7 +199,7 @@ class _$Decrement implements Decrement {
 
   @override
   String toString() {
-    return 'CounterEvent.decrement()';
+    return 'CounterBlocEvent.decrement()';
   }
 
   @override
@@ -274,6 +274,124 @@ class _$Decrement implements Decrement {
   }
 }
 
-abstract class Decrement implements CounterEvent {
+abstract class Decrement implements CounterBlocEvent {
   const factory Decrement() = _$Decrement;
+}
+
+/// @nodoc
+mixin _$CounterBlocState {
+  int get count => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CounterBlocStateCopyWith<CounterBlocState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CounterBlocStateCopyWith<$Res> {
+  factory $CounterBlocStateCopyWith(
+          CounterBlocState value, $Res Function(CounterBlocState) then) =
+      _$CounterBlocStateCopyWithImpl<$Res, CounterBlocState>;
+  @useResult
+  $Res call({int count});
+}
+
+/// @nodoc
+class _$CounterBlocStateCopyWithImpl<$Res, $Val extends CounterBlocState>
+    implements $CounterBlocStateCopyWith<$Res> {
+  _$CounterBlocStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? count = null,
+  }) {
+    return _then(_value.copyWith(
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_CounterBlocStateCopyWith<$Res>
+    implements $CounterBlocStateCopyWith<$Res> {
+  factory _$$_CounterBlocStateCopyWith(
+          _$_CounterBlocState value, $Res Function(_$_CounterBlocState) then) =
+      __$$_CounterBlocStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int count});
+}
+
+/// @nodoc
+class __$$_CounterBlocStateCopyWithImpl<$Res>
+    extends _$CounterBlocStateCopyWithImpl<$Res, _$_CounterBlocState>
+    implements _$$_CounterBlocStateCopyWith<$Res> {
+  __$$_CounterBlocStateCopyWithImpl(
+      _$_CounterBlocState _value, $Res Function(_$_CounterBlocState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? count = null,
+  }) {
+    return _then(_$_CounterBlocState(
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CounterBlocState implements _CounterBlocState {
+  const _$_CounterBlocState({required this.count});
+
+  @override
+  final int count;
+
+  @override
+  String toString() {
+    return 'CounterBlocState(count: $count)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CounterBlocState &&
+            (identical(other.count, count) || other.count == count));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, count);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CounterBlocStateCopyWith<_$_CounterBlocState> get copyWith =>
+      __$$_CounterBlocStateCopyWithImpl<_$_CounterBlocState>(this, _$identity);
+}
+
+abstract class _CounterBlocState implements CounterBlocState {
+  const factory _CounterBlocState({required final int count}) =
+      _$_CounterBlocState;
+
+  @override
+  int get count;
+  @override
+  @JsonKey(ignore: true)
+  _$$_CounterBlocStateCopyWith<_$_CounterBlocState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

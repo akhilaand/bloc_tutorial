@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:bloc_flutter/counter_bloc/counter_bloc.dart';
+import 'package:bloc_flutter/counter/bloc/counter_bloc_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (ctx) => CounterBloc(),
+      create: (ctx) => CounterBlocBloc(),
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -88,10 +88,10 @@ class MyHomePage extends StatelessWidget {
             const Text(
               'You have pushed the button this many times:',
             ),
-            BlocBuilder<CounterBloc, CounterState>(
+            BlocBuilder<CounterBlocBloc, CounterBlocState>(
               builder: (context, state) {
                 return Text(
-                  state.counter.toString(),
+                  state.count.toString(),
                   style: Theme
                       .of(context)
                       .textTheme
@@ -104,16 +104,17 @@ class MyHomePage extends StatelessWidget {
       ),
       floatingActionButton: Row(
         children: [
+          
           FloatingActionButton(
             onPressed: () {
-              context.read<CounterBloc>().add(Increment());
+              context.read<CounterBlocBloc>().add(const Increment());
             },
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
           FloatingActionButton(
             onPressed: () {
-              context.read<CounterBloc>().add(Decrement());
+              context.read<CounterBlocBloc>().add(const Decrement());
             },
             tooltip: 'Decrement',
             child: const Icon(Icons.remove),
